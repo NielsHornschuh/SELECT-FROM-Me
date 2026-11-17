@@ -23,12 +23,12 @@ const LEVELS = [
    tables:[vakken], expected:()=>[cellsOf([2,3,5,7],[0,1,2,3,4,5])]},
   {query:"SELECT student_id, cijfer FROM inschrijvingen WHERE cijfer >= 8;", hint:"Tip: klik losse cellen op het snijpunt van rij en kolom.", clause:"WHERE-clausule",
    tables:[inschrijvingen], expected:()=>[cellsOf([0,2,5,7,9,10],[1,4])]},
-  {query:"SELECT studenten.naam, inschrijvingen.status FROM studenten JOIN inschrijvingen ON studenten.id = inschrijvingen.student_id WHERE status = actief;", hint:"Tip: selecteer uit beide tabellen alleen de gegevens die een match hebben.", clause:"ON-clausule",
-   tables:[studenten, inschrijvingen], expected:()=>[cellsOf([0,1,2,3,4,6,8,9],[1]), cellsOf([0,1,3,4,6,8,9,11],[3])]},
+  {query:"SELECT lokaal, capaciteit FROM lokalen WHERE capaciteit > 30;", hint:"Tip: selecteer de volledige rijen die aan de voorwaarde voldoen.", clause:"WHERE-clausule",
+   tables:[lokalen], expected:()=>[cellsOf([1,3,5,6,7],[2,3])]},
   {query:"SELECT docenten.naam, vakken.naam FROM docenten JOIN vakken ON docenten.vak_id = vakken.id;", hint:"Tip: selecteer alleen de kolommen die in de SELECT-lijst staan.", clause:"ON-clausule",
    tables:[docenten, vakken], expected:()=>[cellsOf([0,1,2,3,4,5,6,7],[1]), cellsOf([0,1,2,3,4,5,6,7],[1])]},
-  {query:"SELECT lokaal, capaciteit FROM lokalen WHERE capaciteit > 30;", hint:"Tip: selecteer de volledige rijen die aan de voorwaarde voldoen.", clause:"WHERE-clausule",
-   tables:[lokalen], expected:()=>[cellsOf([1,3,5,6,7],[2,3])]}
+  {query:"SELECT studenten.naam, inschrijvingen.status FROM studenten JOIN inschrijvingen ON studenten.id = inschrijvingen.student_id WHERE status = actief;", hint:"Tip: selecteer uit beide tabellen alleen de gegevens die een match hebben.", clause:"ON-clausule",
+   tables:[studenten, inschrijvingen], expected:()=>[cellsOf([0,1,2,3,4,6,8,9],[1]), cellsOf([0,1,3,4,6,8,9,11],[3])]}
 ];
 
 const ALL_TABLES = [...new Set(LEVELS.flatMap(lv => lv.tables))];
