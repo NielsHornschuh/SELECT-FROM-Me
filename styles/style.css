@@ -7,8 +7,6 @@
     --dim:#7d8596;
     --loose:#1f4f8f;
     --looseb:#4c9aff;
-    --lock:#5b2d86;
-    --lockb:#b57bff;
     --ok:#3ecf8e;
     --err:#ff6b6b;
     color-scheme:dark;
@@ -193,9 +191,9 @@ th.col:hover{
 }
 
 th.col.on{
-    background:var(--lock);
+    background:var(--loose);
     color:#fff;
-    box-shadow:inset 0 -.1875rem 0 var(--lockb)
+    box-shadow:inset 0 -.1875rem 0 var(--looseb)
 }
 
 td.cell{
@@ -228,8 +226,8 @@ th.corner,td.rowbox{text-align:center;padding:.375rem .5rem;background:#141722}
 }
 
 .box.on{
-    background:var(--lockb);
-    border-color:var(--lockb)
+    background:var(--looseb);
+    border-color:var(--looseb)
 }
 
 .box.on::after{
@@ -279,6 +277,13 @@ button.run{
     background:var(--ok);
     color:#06210f;
     border-color:var(--ok);
+    font-weight:700
+}
+
+button.next{
+    background:var(--looseb);
+    color:#06210f;
+    border-color:var(--looseb);
     font-weight:700
 }
 
