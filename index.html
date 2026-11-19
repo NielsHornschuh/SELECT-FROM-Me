@@ -3,49 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>SELECT * FROM Me</title>
+<title>SELECT * FROM Me - Start</title>
 <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <header class="site-band">
+    <header class="site-band site-header">
         <h1>SELECT * FROM Me</h1>
         <p>Leer de basis van SQL door de juiste rijen en kolommen uit tabellen te selecteren.</p>
     </header>
 
-    <div class="wrap">
-        <div class="controls">
-            <h1><span class="mono">SELECT * FROM Me</span><span id="lvl" class="mono"></span></h1>
-            <div id="query" class="query mono"></div>
-            <div id="hint" class="hint"></div>
-            
-            <div class="bar">
-                <button class="run" id="run">Execute Query</button>
-                <button class="next" id="next" style="display:none">Volgend level</button>
-                <button id="reset">Reset selectie</button>
+    <main class="welcome-page">
+        <div class="welcome-card">
+            <p class="eyebrow mono">DATABASE QUEST</p>
+            <h2>Leer SQL door te spelen.</h2>
+            <p class="lead">Vind de juiste gegevens in tabellen en bouw stap voor stap je eerste SQL-query's op.</p>
+            <div class="welcome-actions">
+                <a class="button primary-action" href="tutorial.html">Bekijk de uitleg</a>
+                <a class="button secondary-action" href="game.html">Ik weet al hoe het werkt</a>
             </div>
-
-            <section class="help">
-                <h2>Hoe speel je?</h2>
-                <ol>
-                    <li>Lees de SQL-query hierboven.</li>
-                    <li>Selecteer de juiste cellen in de tabel(len).</li>
-                    <li>Voer je antwoord uit en probeer het volgende level.</li>
-                </ol>
-                <h2>SQL-tip</h2>
-                <p>SELECT bepaalt welke kolommen je nodig hebt. WHERE bepaalt welke rijen overblijven.</p>
-            </section>
+            <p class="welcome-note">Geen voorkennis nodig · 7 korte levels · Direct in je browser</p>
         </div>
-        <div class="results">
-            <div id="table-tabs" class="table-tabs" role="tablist" aria-label="Tabellen"></div>
-            <div id="tables" class="tables"></div>
-            <div id="msg" aria-live="polite"></div>
-            <div class="legend">
-                <span><i style="background:var(--loose);outline:2px solid var(--looseb)"></i>Geselecteerde cel / rij / kolom / tabel</span>
-            </div>
-        </div>
-    </div>
+    </main>
 
     <footer class="site-band"></footer>
-<script src="js/script.js"></script>
 </body>
 </html>

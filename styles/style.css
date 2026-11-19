@@ -48,6 +48,317 @@ body{
     font-size:.875rem;
 }
 
+.site-header{
+    position:relative;
+}
+
+.welcome-page, .tutorial-page{
+    width:min(100%, 95%);
+    flex:1;
+    margin:0 auto;
+    padding:2rem 1rem 3rem;
+    display:grid;
+    place-items:center;
+}
+
+.welcome-card, .tutorial-card{
+    width:min(100%, 46rem);
+    padding:clamp(2rem, 6vw, 4rem);
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:.75rem;
+    box-shadow:0 1.5rem 4rem rgba(0,0,0,.18);
+}
+
+.eyebrow{
+    margin:0 0 .75rem;
+    color:var(--looseb);
+    font-size:.75rem;
+    font-weight:700;
+    letter-spacing:.12em;
+}
+
+.welcome-card h2, .tutorial-card h2{
+    margin:0;
+    color:var(--text);
+    font-size:clamp(1.75rem, 5vw, 2.75rem);
+    line-height:1.1;
+}
+
+.lead{
+    max-width:32rem;
+    margin:1.25rem 0 2rem;
+    color:var(--dim);
+    font-size:1.05rem;
+    line-height:1.6;
+}
+
+.welcome-actions, .tutorial-actions{
+    display:flex;
+    gap:.75rem;
+    flex-wrap:wrap;
+}
+
+.welcome-actions button, .welcome-actions .button, .tutorial-actions button, .tutorial-actions .button{
+    width:auto;
+}
+
+.button{
+    font:inherit;
+    font-size:.875rem;
+    border:1px solid var(--line);
+    border-radius:.375rem;
+    cursor:pointer;
+    text-decoration:none;
+}
+
+button.primary-action, button.secondary-action, .button.primary-action, .button.secondary-action{
+    padding:.75rem 1.25rem;
+    font-weight:700;
+}
+
+button.primary-action, .button.primary-action{
+    background:var(--looseb);
+    color:#061525;
+    border-color:var(--looseb);
+}
+
+button.secondary-action, .button.secondary-action{
+    background:transparent;
+}
+
+.welcome-note{
+    margin:2rem 0 0;
+    color:var(--dim);
+    font-size:.75rem;
+}
+
+.victory-body{
+    overflow-x:hidden;
+}
+
+.victory-card{
+    position:relative;
+    z-index:2;
+    text-align:center;
+}
+
+.victory-card .lead{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.victory-card .welcome-actions{
+    justify-content:center;
+}
+
+.victory-icon{
+    width:5rem;
+    height:5rem;
+    margin:0 auto 1.25rem;
+    display:grid;
+    place-items:center;
+    border:2px solid var(--ok);
+    border-radius:50%;
+    background:#12301f;
+    color:var(--ok);
+    font-size:2.75rem;
+    font-weight:700;
+    box-shadow:0 0 2rem rgba(62,207,142,.18);
+}
+
+.confetti{
+    position:fixed;
+    inset:0;
+    z-index:1;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.confetti i{
+    position:absolute;
+    top:-2rem;
+    left:var(--left);
+    width:var(--width);
+    height:var(--height);
+    border-radius:.125rem;
+    background:var(--color);
+    opacity:.95;
+    animation:confetti-fall var(--duration) var(--delay) linear forwards;
+}
+
+@keyframes confetti-fall{
+    0%{
+        transform:translate3d(0,-2rem,0) rotate(0);
+    }
+    100%{
+        transform:translate3d(var(--drift),110vh,0) rotate(var(--spin));
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .confetti{
+        display:none;
+    }
+}
+
+.tutorial-heading{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:1rem;
+    margin-bottom:2.5rem;
+}
+
+.tutorial-progress{
+    color:var(--dim);
+    font-family:"JetBrains Mono",Consolas,Menlo,monospace;
+    font-size:.8125rem;
+    white-space:nowrap;
+}
+
+.tutorial-step{
+    min-height:14rem;
+}
+
+.step-number{
+    margin-bottom:.75rem;
+    color:var(--looseb);
+    font:700 .8125rem "JetBrains Mono",Consolas,Menlo,monospace;
+}
+
+.tutorial-step h3{
+    margin:0 0 .75rem;
+    font-size:1.35rem;
+}
+
+.tutorial-step p{
+    max-width:36rem;
+    margin:0 0 1.25rem;
+    color:var(--dim);
+    line-height:1.6;
+}
+
+.tutorial-step strong{
+    color:var(--text);
+}
+
+.query-example, .mini-table, .tutorial-result{
+    width:fit-content;
+    max-width:100%;
+    padding:.85rem 1rem;
+    border:1px solid var(--line);
+    border-radius:.5rem;
+    background:#12151d;
+    overflow:auto;
+}
+
+.query-example{
+    color:var(--text);
+}
+
+
+.statement-list{
+    display:grid;
+    gap:.5rem;
+    margin-bottom:1.25rem;
+}
+
+.statement-list div{
+    display:flex;
+    align-items:baseline;
+    gap:.75rem;
+    color:var(--dim);
+}
+
+.statement-list strong{
+    min-width:7rem;
+    color:#c792ea;
+}
+
+.selection-list{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+    gap:.625rem;
+    margin-bottom:1.25rem;
+    color:var(--dim);
+    font-size:.875rem;
+}
+
+.selection-list span{
+    display:flex;
+    align-items:center;
+    gap:.5rem;
+}
+
+.selection-icon{
+    display:grid;
+    width:1.5rem;
+    height:1.5rem;
+    place-items:center;
+    border:1px solid var(--looseb);
+    border-radius:.25rem;
+    color:var(--looseb);
+    font-family:"JetBrains Mono",Consolas,Menlo,monospace;
+}
+
+.mini-table{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(4rem, 1fr));
+    gap:.5rem;
+    color:var(--dim);
+}
+
+.mini-table strong{
+    color:var(--text);
+    background:var(--loose);
+    outline:2px solid var(--looseb);
+    outline-offset:-2px;
+}
+
+.tutorial-selection-feedback{
+    margin:.75rem 0 0;
+    color:var(--dim);
+    font-size:.8125rem;
+}
+
+.tutorial-selection-reset{
+    width:auto;
+    margin-top:.5rem;
+    padding:.4rem .75rem;
+    font-size:.75rem;
+}
+
+.tutorial-result{
+    color:var(--ok);
+}
+
+.tutorial-result span{
+    display:inline-block;
+    margin-right:.4rem;
+    font-weight:700;
+}
+
+.tutorial-actions{
+    justify-content:space-between;
+    margin-top:1rem;
+}
+
+.tutorial-actions button:disabled{
+    cursor:not-allowed;
+    opacity:.4;
+}
+
+.tutorial-skip{
+    display:block;
+    width:auto;
+    margin:1.25rem auto 0;
+    padding:.25rem;
+    border:0;
+    color:var(--dim);
+    font-size:.75rem;
+}
+
 .wrap{
     max-width:95%;
     width:100%;
@@ -261,6 +572,10 @@ th.corner,td.rowbox{text-align:center;padding:.375rem .5rem;background:#141722}
     justify-content:space-between;
 }
 
+[hidden]{
+    display:none !important;
+}
+
 button{
     width: 48%;
     font:inherit;
@@ -344,6 +659,18 @@ footer.site-band{
 }
 
 @media (max-width:43.75em){
+    .welcome-page, .tutorial-page{
+        padding-top:1rem;
+    }
+
+    .welcome-card, .tutorial-card{
+        padding:1.5rem;
+    }
+
+    .welcome-actions button, .welcome-actions .button{
+        width:100%;
+    }
+
     .wrap{
         grid-template-columns:1fr;
     }

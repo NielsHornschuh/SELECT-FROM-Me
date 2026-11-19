@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SELECT * FROM Me - Uitleg</title>
+<link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header class="site-band site-header">
+        <h1>SELECT * FROM Me</h1>
+        <p>Leer de basis van SQL door de juiste rijen en kolommen uit tabellen te selecteren.</p>
+    </header>
+
+    <main class="tutorial-page">
+        <div class="tutorial-card">
+            <div class="tutorial-heading">
+                <div>
+                    <p class="eyebrow mono">ZO WERKT HET</p>
+                    <h2>Van vraag naar resultaat</h2>
+                </div>
+                <span id="tutorial-progress" class="tutorial-progress">1 / 4</span>
+            </div>
+
+            <div class="tutorial-step">
+                <div class="step-number">01</div>
+                 <h3>Lees de query en de statements</h3>
+                <p>Lees eerst wat de query vraagt. Elk statement heeft een eigen taak:</p>
+                <div class="statement-list">
+                    <div><strong class="mono">SELECT</strong><span>welke kolommen je nodig hebt</span></div>
+                    <div><strong class="mono">FROM</strong><span>uit welke tabel je gegevens haalt</span></div>
+                    <div><strong class="mono">WHERE</strong><span>welke rijen aan een voorwaarde voldoen</span></div>
+                    <div><strong class="mono">AND</strong><span>een extra voorwaarde toevoegt</span></div>
+                    <div><strong class="mono">JOIN ... ON</strong><span>gegevens uit twee tabellen koppelt</span></div>
+                </div>
+                <div class="query-example mono"><span class="kw">SELECT</span> naam <span class="kw">FROM</span> studenten <span class="kw">WHERE</span> klas = D1A;</div>
+                
+            </div>
+            <div class="tutorial-step" hidden>
+                <div class="step-number">02</div>
+                <h3>Test zelf met een tabel</h3>
+                <p>Klik op een cel, kolomnaam, rijvakje of het hoekvakje. Zo werkt het selecteren straks ook in het spel.</p>
+                <div id="tutorial-tables" class="tables"></div>
+                <p id="tutorial-selection-feedback" class="tutorial-selection-feedback" aria-live="polite">Nog niets geselecteerd.</p>
+                <button id="tutorial-selection-reset" class="tutorial-selection-reset" type="button">Selectie wissen</button>
+            </div>
+            <div class="tutorial-step" hidden>
+                <div class="step-number">03</div>
+                <h3>Filter de rijen</h3>
+                <p>Bij <strong>WHERE</strong> zoek je alleen rijen die aan een voorwaarde voldoen. Gebruik het vakje links van een rij om de hele rij te kiezen.</p>
+                <div class="query-example mono"><span class="kw">WHERE</span> niveau = gevorderd;</div>
+            </div>
+            <div class="tutorial-step" hidden>
+                <div class="step-number">04</div>
+                <h3>Controleer je antwoord</h3>
+                <p>Ben je klaar? Klik op <strong>Execute Query</strong>. Je krijgt meteen feedback. Daarna speel je het volgende level.</p>
+                <div class="tutorial-result"><span>✓</span> Selectie klopt exact</div>
+            </div>
+
+            <div class="tutorial-actions">
+                <a class="button secondary-action" href="index.html">Terug</a>
+                <button id="tutorial-back" class="secondary-action" type="button" disabled>Vorige</button>
+                <button id="tutorial-next" class="primary-action" type="button">Volgende</button>
+                <a id="start-game" class="button primary-action" href="game.html" hidden>Start het spel</a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-band"></footer>
+<script type="module" src="js/script.js"></script>
+</body>
+</html>
